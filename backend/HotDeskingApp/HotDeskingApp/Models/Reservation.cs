@@ -6,7 +6,7 @@ namespace HotDeskingApp.Models
     {
         Pending,
         Confirmed,
-        Canceled
+        Cancelled
     }
     public class Reservation
     {
@@ -18,9 +18,9 @@ namespace HotDeskingApp.Models
         public ReservationStatus Status { get; set; } = ReservationStatus.Pending;
 
         public int UserId { get; set; }
-        public User User { get; set; } = null!;
+        public User? User { get; set; } = null!;
 
         public int DeskId { get; set; }
-        public Desk Desk { get; set; } = null!;
+        public Desk? Desk { get; set; } = null!;
     }
 }

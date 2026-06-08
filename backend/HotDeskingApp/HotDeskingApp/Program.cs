@@ -1,4 +1,4 @@
-using HotDeskingApp.Data;
+﻿using HotDeskingApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -25,5 +25,23 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// ---- SEEDOWANIE BAZY DANYCH (DODAJ TO TUTAJ) ----
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<AppDbContext>();
+        // Wywołujemy nasz seeder asynchronicznie
+        await DbSeeder.SeedAsync(context);
+    }
+    catch (Exception ex)
+    {
+        // Jeśli coś pójdzie nie tak (np. brak połączenia z bazą), logujemy błąd w konsoli
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Wystąpił błąd podczas automatycznego seedowania bazy danych.");
+    }
+}
 
 app.Run();

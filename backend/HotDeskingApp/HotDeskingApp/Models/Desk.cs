@@ -7,7 +7,7 @@
         public bool IsAvailable { get; set; } = true;
 
         public int LocationId { get; set; }
-        public Location Location { get; set; } = null!;
+        public Location? Location { get; set; } = null!;
 
         public ICollection<Reservation> Reservations{ get; set; } = [];
     }
