@@ -1,0 +1,32 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+out/
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Visual Studio Code settings
+.vscode/
+
+# Others
+*.log
+*.tlog
+*.cache
+*.pdb
+
+# OS generated files
+.DS_Store
+Thumbs.db
