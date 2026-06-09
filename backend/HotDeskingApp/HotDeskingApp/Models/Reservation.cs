@@ -14,7 +14,6 @@ namespace HotDeskingApp.Models
 
         [Required]
         public DateTime ReservationDate { get; set; }
-
         public ReservationStatus Status { get; set; } = ReservationStatus.Pending;
 
         public int UserId { get; set; }
