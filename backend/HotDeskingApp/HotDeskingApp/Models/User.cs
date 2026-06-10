@@ -18,6 +18,8 @@ namespace HotDeskingApp.Models
         [EmailAddress]
         public string Email { get; set; } = string.Empty;
 
+        public string PasswordHash { get; set; } = string.Empty;
+
         public ICollection<Reservation> Reservations { get; set; } = [];
     }
 }

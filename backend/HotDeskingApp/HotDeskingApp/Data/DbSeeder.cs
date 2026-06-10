@@ -18,7 +18,8 @@ public static class DbSeeder
         {
             FirstName = "Jan",
             LastName = "Kowalski",
-            Email = "jan.kowalski@firma.pl"
+            Email = "jan.kowalski@firma.pl",
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("password123")
         };
         context.Users.Add(defaultUser);
 

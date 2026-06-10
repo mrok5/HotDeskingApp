@@ -2,9 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using HotDeskingApp.Data;
 using HotDeskingApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotDeskingApp.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class ReservationsController(AppDbContext context) : ControllerBase
